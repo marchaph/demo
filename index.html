@@ -1,15 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
-    </head>
-    <body>
-        <a-scene xr-mode-ui="enabled: true">
-                       <a-sphere position="5 0 -5" radius="1" color="red" animation="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; loop: true; dir: alternate;"></a-sphere>
-     
-                         <a-box position="5 0 -10" depth="2" height="4" width="0.5" color="tomato" animation="property: position; from: 5 0 -10; to: 5 20 -10; dur: 5000; dir: alternate; loop: true;"></a-box>
-     
-                        <a-torus color="#43A367" arc="360" radius="1" radius-tubular="0.1" position="5 0 -15" animation="property: rotation; from: 0 10 0; to: 0 360 0; dir: alternate; dur: 2000; loop: true;"></a-torus>
-        </a-scene>
-    </body>
+<head>
+    <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene xr-mode-ui="enabled: true">
+
+        <a-sphere
+            position="0 1.6 -3"
+            radius="1"
+            color="red"
+            animation="property: scale;
+                       from: 1 1 1;
+                       to: 0.1 0.1 0.1;
+                       loop: true;
+                       dir: alternate;">
+        </a-sphere>
+
+        <a-box
+            position="0 1.6 -6"
+            depth="2"
+            height="4"
+            width="0.5"
+            color="tomato"
+            animation="property: position;
+                       from: 0 1.6 -6;
+                       to: 0 20 -6;
+                       dur: 5000;
+                       dir: alternate;
+                       loop: true;">
+        </a-box>
+
+        <a-torus
+            color="#43A367"
+            arc="360"
+            radius="1"
+            radius-tubular="0.1"
+            position="0 1.6 -9"
+            animation="property: rotation;
+                       from: 0 10 0;
+                       to: 0 360 0;
+                       dir: alternate;
+                       dur: 2000;
+                       loop: true;">
+        </a-torus>
+
+    </a-scene>
+</body>
 </html>
