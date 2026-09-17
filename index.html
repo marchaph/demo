@@ -1,44 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-  </head>
-  <body>
-    <a-scene xr-mode-ui="enabled: true" background="color: #ECECEC">
+<head>
+    <meta charset="UTF-8">
+    <title>A-Frame Quest Test</title>
 
-      <!-- Pulsing Blue Sphere -->
-      <a-sphere 
-        color="green" 
-        radius="1" 
-        position="0 1.6 -5"
-        animation="
-          property: scale;
-          from: 1 1 1;
-          to: 3 3 3;
-          dir: alternate;
-          loop: true;
-          dur: 500;
-        ">
-      </a-sphere>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+</head>
 
-      <!-- 
-      Uncomment to use opacity animation (requires material="transparent: true"):
-      <a-sphere 
-        color="blue" 
-        radius="1" 
-        position="-3 1.6 -5"
-        material="transparent: true"
-        animation="
-          property: material.opacity;
-          from: 1;
-          to: 0;
-          dur: 3000;
-          dir: alternate;
-          loop: true;
-        ">
-      </a-sphere> 
-      -->
+<body>
 
-    </a-scene>
-  </body>
+<a-scene background="color: black">
+
+    <a-sphere
+        position="0 0 -5"
+        radius="1"
+        color="blue">
+    </a-sphere>
+
+</a-scene>
+
+</body>
 </html>
