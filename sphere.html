@@ -5,7 +5,15 @@
     </head>
     <body>
         <a-scene xr-mode-ui="XRMode: xr">
-            <a-sphere color="green" radius="1" position="0 1 -5"></a-sphere> 
+            <a-sphere color="blue" radius="1" position="0 1 -5"
+                animation="
+                    property: scale;
+                    from: 1 1 1;
+                    to: 2 2 2;
+                    dir: alternate;
+                    loop: true;
+                    dur: 5000;"
+                ></a-sphere> 
         </a-scene>
     </body>
 </html>
