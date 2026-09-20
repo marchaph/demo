@@ -6,20 +6,24 @@
     <body>
         <a-scene> <!-- xr-mode-ui="XRMode: xr"> -->
             <a-sky color="#f71a5b"></a-sky>
-            <a-sphere color="red" radius="1" position="0 1 -5"
-                animation="
-                    property: scale;
-                    from: 1 1 1;
-                    to: 2 2 2;
-                    dir: alternate;
-                    loop: true;
-                    dur: 5000;"
+            <a-plane position="0 0 -5" rotation="-90 0 0" width="30" height="30" color="#111122"></a-plane>
 
-                animation__2="
-                    property: position;
-                    from: 0 1 -5;
-                    to: 0 4 -5;"
-                ></a-sphere> 
+            <!-- Sphere  Animations: Position & Color -->
+            <a-sphere 
+                position="0 2 -5" 
+                radius="1" 
+                color="#695bd2"
+                animation="property: position; 
+                from: 0 1.8 -5; 
+                to: 0 3.2 -5; 
+                dir: alternate; 
+                loop: true; 
+                dur: 2000;"
+                
+                animation__2="property: color; from: #ff0055; to: #00e5ff; dir: alternate; loop: true; dur: 3000;">
+            </a-sphere>
+
+
         </a-scene>
     </body>
 </html>
