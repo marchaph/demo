@@ -15,7 +15,12 @@
 <a-sky color="#ECECEC"></a-sky>
 <a-plane rotation="-90 0 0" width="20" height="20" color="#7BC8A4"></a-plane>
 
-<a-sphere id="ox" radius=".5" position="0 1 -5" color="#000055"></a-sphere>
+<a-sphere id="ox" radius=".5" position="0 1 -5" color="#000055"
+   animation="
+      property: scale;
+      from: 1 1 1;
+      to: 0 0 0;
+   "></a-sphere>
 <a-sphere id="box" radius=".5" position="-2 1 -5" color="#00FF55"></a-sphere>
 
 </a-scene>
