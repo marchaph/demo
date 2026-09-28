@@ -30,7 +30,7 @@
     function moveToRandom() {
     sphere.setAttribute('animation_position', {
     property: 'position', to: `${rand(-4, 4)} ${rand(0.5, 3)} ${rand(-8, -2)}`,
-    dur: 1000, easing: 'easeInOutQuad'
+    dur: 1000, easing: 'easeInOutQuad', loop: 'true'
     }); }
     sphere.addEventListener('animationcomplete', moveToRandom);
     if (scene.hasLoaded)
