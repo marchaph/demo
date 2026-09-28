@@ -21,31 +21,31 @@
             startEvent: click;
         "></a-sphere>
     </a-scene>
-    <script>
-    const scene = document.querySelector('a-scene');
-    const sphere = document.querySelector('#sphere');
-    const rand = (min, max) => min + Math.random() * (max - min);
+   <script>
+  const scene = document.querySelector('a-scene');
+  const sphere = document.querySelector('#sphere');
+  const rand = (min, max) => min + Math.random() * (max - min);
 
-    function moveToRandom() {
+  function moveToRandom() {
     sphere.setAttribute('animation__position', {
-    property: 'position', to: `${rand(-4, 4)} ${rand(0.5, 3)} ${rand(-8, -2)}`,
-    dur: 1000, easing: 'easeInOutQuad'
-    }); }
+      property: 'position',
+      to: `${rand(-4, 4)} ${rand(0.5, 3)} ${rand(-8, -2)}`,
+      dur: 1000,
+      easing: 'easeInOutQuad'
+    });
+  }
 
-    sphere.addEventListener('animationcomplete', (e) => {
+  sphere.addEventListener('animationcomplete', (e) => {
     // Only react when the position animation finishes
     if (e.detail.name === 'animation__position') moveToRandom();
-  });    
-    
-    if (scene.hasLoaded)
-    {
+  });
+
+  if (scene.hasLoaded) {
     moveToRandom();
-    }
-    else
-    {
+  } else {
     scene.addEventListener('loaded', moveToRandom);
-    }
-    </script>
+  }
+</script>
    
     </body>
     </html>
