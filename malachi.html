@@ -28,9 +28,9 @@
     const rand = (min, max) => min + Math.random() * (max - min);
 
     function moveToRandom() {
-    sphere.setAttribute('animation_position', {
+    sphere.setAttribute('animation__position', {
     property: 'position', to: `${rand(-4, 4)} ${rand(0.5, 3)} ${rand(-8, -2)}`,
-    dur: 1000, easing: 'easeInOutQuad', loop: 'true'
+    dur: 1000, easing: 'easeInOutQuad'
     }); }
     sphere.addEventListener('animationcomplete', moveToRandom);
     if (scene.hasLoaded)
