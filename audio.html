@@ -1,0 +1,13 @@
+<head>
+  <script src="https://aframe.io"></script>
+</head>
+<body>
+  <a-scene>
+    <a-assets>
+      <audio id="pop-sound" src="sound1.mp3" preload="auto"></audio>
+    </a-assets>
+
+    <!-- Play sound on click using the 'on' property -->
+    <a-box position="0 1.6 -3" color="#4CC3D9" sound="src: #pop-sound; on: click"></a-box>
+  </a-scene>
+</body>
