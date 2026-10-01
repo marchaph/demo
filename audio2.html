@@ -12,7 +12,7 @@
 
       <!-- Background music: attached to the scene, loops -->
       <a-entity id="music"
-                sound="src: #bgm; loop: true; volume: 0.4; autoplay: true"></a-entity>
+                sound="src: #bgm; loop: true; volume: 0.4;"></a-entity>
 
       <!-- Sound effect: attached to an object, plays on click -->
       <a-box id="box" position="0 1.5 -3" color="tomato"
@@ -23,8 +23,21 @@
       <a-camera>
           <a-cursor></a-cursor>
       </a-camera>
-      <a-sky color="#sss"></a-sky>
+      <a-sky color="#aaa"></a-sky>
     </a-scene>
-  
+    <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const scene = document.querySelector('a-scene');
+    const music = document.querySelector('#music');
+
+    const startMusic = () => {
+      music.components.sound.playSound();
+    };
+
+    // Fires once on the first user interaction
+    scene.addEventListener('click', startMusic, { once: true });
+    window.addEventListener('touchstart', startMusic, { once: true });
+  });
+</script>
   </body>
 </html>
