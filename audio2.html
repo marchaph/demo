@@ -25,19 +25,6 @@
       </a-camera>
       <a-sky color="#sss"></a-sky>
     </a-scene>
-    <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const scene = document.querySelector('a-scene');
-    const music = document.querySelector('#music');
-
-    const startMusic = () => {
-      music.components.sound.playSound();
-    };
-
-    // Fires once on the first user interaction
-    scene.addEventListener('click', startMusic, { once: true });
-    window.addEventListener('touchstart', startMusic, { once: true });
-  });
-</script>
+  
   </body>
 </html>
