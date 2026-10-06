@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Colliding Shapes</title>
+        <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+        <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    
+    </head>
+    <body>
+        <a-scene physics="gravity:-9.8">
+    
+            <a-sky color="lightblue"></a-sky>
+        
+            <!-- Floor -->
+            <a-plane static-body
+                color="tan"
+                position="0 0 0"
+                width="30"
+                height="30"
+                rotation="-90 0 0"
+            ></a-plane>
+        
+            <!-- Fixed box -->
+            <a-box static-body
+                position="0 2 -5"
+                width="4"
+                height="2"
+                depth="1"
+                rotation="20 0 -20"
+                color="purple">
+            </a-box>
+            
+            <!-- Freely Moving Sphere -->
+            <a-sphere dynamic-body
+                position="0 5 -5"
+                color="red"
+            ></a-sphere>
+            
+    </a-scene>
+  </body>
+</html>
