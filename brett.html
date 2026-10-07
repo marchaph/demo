@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+   
+    </head>
+    <body>
+        <a-scene>
+            <a-assets>
+                <audio id="Thump" src="sound1.mp3" preload="auto"></audio>
+                <audio id="Background" src="background.mp3" preload="auto"></audio>
+            </a-assets>
+              <a-text
+        value="Score:"
+        position="-2 4 -3"
+        color="black"
+        width="6"
+        font="kelsonsans">
+      </a-text>
+        <a-entity
+        id="music" sound= "src: #Background; loop: true; volume: 0.8;"    
+        ></a-entity>
+       
+
+   
+       <a-text
+        value="0"
+        position="-1 4 -3"
+        color="black"
+        width="6"
+        font="kelsonsans">
+      </a-text>
+ <a-sky color="lightblue"></a-sky>  
+ <a-camera>
+                <a-cursor></a-cursor>
+            </a-camera>
+            <a-cylinder
+             position="0 1 -4" width="1" height="2" sound="src: #Thump; on: click; volume 1" rotation="0 180 0" color="red"
+         animation="
+         property: position;
+            from: 0 1 -4;
+            to: 0 -2.5 -4;
+            loop: true;
+            dir: alternate;
+            dur: 1100;
+            "
+         animation__2="
+                property: scale;
+                from: 1 1 1;
+                to: 0 0 0;
+                dur: 100;
+                 startEvents:click;
+            "
+            ></a-cylinder>
+            
+    </a-scene>
+          <script>document.addEventListener('DOMContentLoaded', () => {
+      const scene = document.querySelector('a-scene');
+      const music = document.querySelector('#music');
+
+      const startMusic = () => {
+      music.components.sound.playSound();
+    };
+
+    // Fires once on the first user interaction
+    scene.addEventListener('mousemove', startMusic, { once: true });
+    window.addEventListener('touchstart', startMusic, { once: true });
+  });
+</script>
+    </body>
+</html>
