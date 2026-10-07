@@ -9,7 +9,7 @@
         <audio id="soundEffect1" src="sound1.mp3" preload="auto"></audio>
         <audio id="bgm" src="background.mp3" preload="auto"></audio>
       </a-assets>
-      <a-entity id="bgm" sound="src: #bgm; loop: true; volume: 0.4;"></a-entity>
+      <a-entity id="music" sound="src: #bgm; loop: true; volume: 0.4;"></a-entity>
       <a-camera>
         <a-cursor></a-cursor>
       </a-camera>
@@ -28,7 +28,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const scene = document.querySelector('a-scene');
-        const music = document.querySelector('#bgm');
+        const music = document.querySelector('#music');
        
         const startMusic = () => {
           if (music && music.components.sound) {
