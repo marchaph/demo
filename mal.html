@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+
+        <a-assets>
+            <audio id="bgm" src="background.mp3" preload="auto"></audio>
+            <audio id="blast" src="sound1.mp3" preload="auto"></audio>
+        </a-assets>
+            <a-entity id="music" sound="src: #bgm; loop: true; volume:1;"></a-entity>
+
+        <a-camera>
+            <a-cursor></a-cursor>
+        </a-camera>  
+           
+        <a-box position="0 1 -10" color="red" width="1.5" height="1.5" depth="1.5" sound="src: #blast; on: click; volume:1;" ></a-box>        
+       
+                       
+        </a-scene>
+
+       
+        <script>
+      document.addEventListener('DOMContentLoaded', () => {
+      const scene = document.querySelector('a-scene');
+      const music = document.querySelector('#music');
+
+      const startMusic = () => {
+      music.components.sound.playSound();
+    };
+
+    // Fires once on the first user interaction
+    scene.addEventListener('mousemove', startMusic, { once: true });
+    window.addEventListener('touchstart', startMusic, { once: true });
+  });
+</script>
+
+
+       
+    </body>
+</html>
