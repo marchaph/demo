@@ -10,8 +10,8 @@
 
         <a-scene>
             <a-assets>
-                <audio id="bgm" src="backround.mp3; preload=auto;"></audio>
-      <audio id="soundEffect1" src="https://codehs.com/uploads/d54c33ab166681face26e462ab5a1363; preload=auto;"></audio>
+                <audio id="bgm" src="background.mp3; preload=auto;"></audio>
+      <audio id="soundEffect1" src="sound1.mpg3; preload=auto;"></audio>
  </a-assets>
 <a-entity id="music sound="src: #bgm; loop: true; volume 0.4;"></a-entity>
            
@@ -19,7 +19,7 @@
                <a-cursor></a-cursor>
             </a-camera>
         <a-sphere
-        sound="src: https://codehs.com/uploads/d54c33ab166681face26e462ab5a1363; on: click; volume: 1;"
+            sound="src: #soundEffect1; on: click; volume: 1;"
             position="0 1 -5"
             radius="1"
             height="1"
