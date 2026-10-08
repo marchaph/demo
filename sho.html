@@ -1,45 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
-  </head>
-  <body>
-    <a-scene>
-      <a-assets>
-        <audio id="soundEffect1" src="sound1.mp3" preload="auto"></audio>
-        <audio id="bgm" src="background.mp3" preload="auto"></audio>
-      </a-assets>
-      <a-entity id="music" sound="src: #bgm; loop: true; volume: 0.4;"></a-entity>
-      <a-camera>
-        <a-cursor></a-cursor>
-      </a-camera>
-
-      <a-plane position="0 0 -5" height="5" width="5" color="pink"></a-plane>
-      <a-plane position="0 -2.5 -5" rotation="-90 0 0" height="5" width="5" color="black"></a-plane>
-      <a-plane position="-2.5 0 -5" rotation="0 90 0" height="5" width="5" color="yellow"></a-plane>
-     
-      <a-box position="0 2 -2" height="5" width="5" depth="5" color="black" sound="src: #soundEffect1; on: click; volume: 1"></a-box>
-     
-     
-     
-     
-    </a-scene>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const scene = document.querySelector('a-scene');
-        const music = document.querySelector('#music');
+    <head>
+        <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+    </head>
+    <body>
        
-        const startMusic = () => {
-          if (music && music.components.sound) {
-            music.components.sound.playSound();
-          }
-        };
 
-        // Fires once on the first user interaction
-        scene.addEventListener('mousemove', startMusic, { once: true });
-        window.addEventListener('touchstart', startMusic, { once: true });
-      });
-    </script>
-  </body>
+
+
+        <a-scene>
+            <a-assets>
+                <audio id="bgm" src="backround.mp3; preload=auto;"></audio>
+      <audio id="soundEffect1" src="https://codehs.com/uploads/d54c33ab166681face26e462ab5a1363; preload=auto;"></audio>
+ </a-assets>
+<a-entity id="music sound="src: #bgm; loop: true; volume 0.4;"></a-entity>
+           
+            <a-camera>
+               <a-cursor></a-cursor>
+            </a-camera>
+        <a-sphere
+        sound="src: https://codehs.com/uploads/d54c33ab166681face26e462ab5a1363; on: click; volume: 1;"
+            position="0 1 -5"
+            radius="1"
+            height="1"
+            animation="
+                property: position;
+                from: -1 1 -4;
+                to: 2 0 -4;
+                dur: 2000;
+                easing: linear;
+                loop: true;
+                dir: alternate;
+            "
+            color="yellow">
+        </a-sphere>
+        </a-scene>
+       
+        <script>
+      document.addEventListener('DOMContentLoaded', () => {
+      const scene = document.querySelector('a-scene');
+      const music = document.querySelector('#music');
+
+      const startMusic = () => {
+      music.components.sound.playSound();
+    };
+
+    // Fires once on the first user interaction
+    scene.addEventListener('mousemove', startMusic, { once: true });
+    window.addEventListener('touchstart', startMusic, { once: true });
+  });
+</script>
+
+
+    </body>
 </html>
